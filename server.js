@@ -8,7 +8,7 @@ var server = require('http').Server(app);
 
 // Websockets with socket.io
 var io = require('socket.io')(server);
-
+console.log(process);
 console.log("Trying to start server with config:", config.serverip + ":" + config.serverport);
 
 // Both port and ip are needed for the OpenShift, otherwise it tries 
