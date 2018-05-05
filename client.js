@@ -19,7 +19,7 @@ var Client;
 }());
 
 Client.prototype.connect = function() {
-  var connString = config.protocol + config.domain + ':' + config.clientport;
+  var connString = config.protocol + window.location.hostname + ':' + config.clientport;
 
   console.log("Websocket connection string:", connString, config.wsclientopts);
 
