@@ -5,7 +5,7 @@ var Config = {
   "serverip":   process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0',
   "serverport": process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 80,
   
-  "clientport":  80:8080,
+  "clientport":  80,
   "protocol":   'ws://',
 
   "heartbeattmo": 1000, // milliseconds 
