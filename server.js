@@ -12,7 +12,7 @@ console.log(process.env);
 console.log("Trying to start server with config:", config.serverip + ":" + config.serverport);
 config.serverip=process.env.TESTOPS_SERVICE_HOST || '127.0.0.1';
 config.serverport=process.env.TESTOPS_SERVICE_PORT || '8080';
-config.serverip=process.env.KUBERNETES_SERVICE_HOST || '127.0.0.1';
+config.serverip='0.0.0.0';
 // Both port and ip are needed for the OpenShift, otherwise it tries 
 // to bind server on IP 0.0.0.0 (or something) and fails
 server.listen(config.serverport, config.serverip, function() {
