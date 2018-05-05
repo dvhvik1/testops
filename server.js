@@ -10,15 +10,13 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 console.log(process.env);
 console.log("Trying to start server with config:", config.serverip + ":" + config.serverport);
-config.serverip=process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
-config.serverport=process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
+
 //config.serverip='0.0.0.0';
 // Both port and ip are needed for the OpenShift, otherwise it tries 
 // to bind server on IP 0.0.0.0 (or something) and fails
 server.listen(config.serverport, config.serverip, function() {
   console.log("Server chay @ http://" + config.serverip + ":" + config.serverport);
 });
-
 // Allow some files to be server over HTTP
 app.use(express.static(__dirname + '/'));
 
